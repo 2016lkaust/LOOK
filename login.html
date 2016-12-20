@@ -8,18 +8,18 @@
     <!-- 新 Bootstrap 核心 CSS 文件 -->
     <link rel="stylesheet" href="./css/bootstrap.min.css">
 
-    <style type="text/css">
+  <style type="text/css">
         html, body {
             height: 100%;
         }
 
         .box {
-            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#ffffff'); /*  IE */
-            background-image: linear-gradient(bottom, #ffffff 0%, #ffffff 100%);
-            background-image: -o-linear-gradient(bottom, #ffffff 0%, #ffffff 100%);
-            background-image: -moz-linear-gradient(bottom, #ffffff 0%, #ffffff 100%);
-            background-image: -webkit-linear-gradient(bottom, #ffffff 0%, #ffffff 100%);
-            background-image: -ms-linear-gradient(bottom, #ffffff 0%, #6699FF 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#404143', endColorstr='#404143'); /*  IE */
+            background-image: linear-gradient(bottom, #404143 0%, #404143 50%);
+            background-image: -o-linear-gradient(bottom, #404143 0%, #404143 50%);
+            background-image: -moz-linear-gradient(bottom, #404143 0%, #404143 50%);
+            background-image: -webkit-linear-gradient(bottom, #404143 0%, #404143 50%);
+            background-image: -ms-linear-gradient(bottom, #404143 0%, #404143 50%);
 
             margin: 0 auto;
             position: relative;
@@ -32,7 +32,7 @@
             max-width: 500px;
             height: 500px;
             position: absolute;
-            top: 50%;
+            top: 45%;
 
             margin-top: -200px;
             /*设置负值，为要定位子盒子的一半高度*/
@@ -59,7 +59,7 @@
             height: 340px;
             width: 100%;
             max-width: 500px;
-            background-color: rgba(255, 255, 255, .8);
+            background-color: rgba(255, 255, 255, 1);
             float: left;
         }
 
@@ -78,7 +78,7 @@
 
         .login-title {
             padding: 20px 10px;
-            background-color: rgba(91,192,222, .6);
+            background-color: rgba(240, 20, 0, .9);
         }
 
         .login-title h1 {
@@ -98,58 +98,60 @@
             padding: 8px 24px !important;
             font-size: 16px !important;
         }
-.mylogin{
-    margin-top:20px ;
-}
+
+        .mylogin {
+            margin-top: 20px;
+        }
+
+        .help-block {
+            color: red;
+        }
     </style>
 
 </head>
 
 <body>
 <div class="box">
-    <div class="login-box">
+    <div class="login-box" style="border:1px solid red;">
         <div class="login-title text-center">
             <h1>
                 <small>能源与安全学院学生信息管理系统</small>
             </h1>
         </div>
-        <div class="login-content ">
+        <div class="login-content " style="border:1px black solid;">
             <div class="form">
-                <form action="login_conf" method="post">
-                    <div class="form-group">
-                        <div class="col-xs-12  ">
-                            <div class="input-group">
-                                <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
-                                <input type="text" id="username"  name="id" class="form-control" placeholder="学号">
-                            </div>
+                <form action="login_conf" method="post" role="form-group">
+                    <div class="col-xs-12 form-group ">
+                        <div class="input-group">
+                            <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+                            <input type="text" id="userid" name="id" class="form-control" placeholder="学号"
+                                   onblur="checkid();">
                         </div>
                     </div>
-                    <div class="form-group">
-                        <div class="col-xs-12  ">
-                            <div class="input-group">
-                                <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
-                                <input type="text" id="password" name="password" class="form-control" placeholder="密码">
-                            </div>
+                    <div class="col-xs-12  ">
+                        <div class="input-group">
+                            <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+                            <input type="password" id="password" name="password" class="form-control" placeholder="密码"
+                                   onblur="checkpw();">
                         </div>
                     </div>
-                   <!--权限-->
-                    <div class="form-group">
-                        <div class="col-xs-offset-2">
-                       <label class="radio-inline">
-                        <input type="radio" value="admin" name="kind">管理员
-                    </label>
+                    <!--权限-->
+                    <div class="col-xs-offset-2">
+                        <label class="radio-inline">
+                            <input type="radio" value="admin" name="kind">管理员
+                        </label>
                         <label class="radio-inline">
                             <input type="radio" value="teacher" name="kind">教师
                         </label>
                         <label class="radio-inline">
-                            <input type="radio" value="student" name="kind">学生
+                            <input type="radio" value="student" name="kind" checked>学生
                         </label>
-                    </div></div>
+                    </div>
                     <!--登录按钮-->
                     <div class="form-group form-actions mylogin">
                         <div class="col-xs-4 col-xs-offset-4 ">
-                            <button type="submit" class="btn btn-sm btn-info"><span
-                                    class="glyphicon glyphicon-off"></span> 登录
+                            <button type="submit" class="btn btn-sm btn-info" id="submit" disabled><span
+                                    class="glyphicon glyphicon-off" ></span> 登录
                             </button>
                         </div>
                     </div>
@@ -164,6 +166,7 @@
                         </div>
                     </div>
                 </form>
+                <div class="form-group col-xs-offset-1 " id="show"><span class="help-block "></span></div>
             </div>
         </div>
     </div>
@@ -173,6 +176,28 @@
 
 <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
 <script src="./js/bootstrap.min.js"></script>
+<script>
+    function checkid() {
+        var length = document.getElementById("userid").value.length;
+        if (length != 10) {
+            document.getElementById("show").innerHTML = "学号不是10位哦！";
+        } else {
+            document.getElementById("show").innerHTML = "";
+        }
+        return false;
+    }
+    function checkpw() {
+        var length = document.getElementById("password").value.length;
+        if (length < 6) {
+            document.getElementById("show").innerHTML = "密码貌似错了！";
+        } else {
+            document.getElementById("show").innerHTML = "";
+            document.getElementById("submit").removeAttribute("disabled");
+        }
+        return false;
+    }
+
+</script>
 </body>
 
 </html>
