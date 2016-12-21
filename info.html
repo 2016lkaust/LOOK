@@ -1,54 +1,41 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1.0"/>
-    <title>登录系统</title>
-    <!-- 新 Bootstrap 核心 CSS 文件 -->
-    <link rel="stylesheet" href="./bootstrap-3.3.7/css/bootstrap.min.css">
-    <style type="text/css">
-        body {
-            padding: 50px 0 0 0;
-        }
-    </style>
+	<meta charset="utf-8"> 
+	<title>Bootstrap 实例 - 边框表格</title>
+	<link rel="stylesheet" href="./bootstrap-3.3.7/css/bootstrap.min.css">  
+	<script src="https://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="./bootstrap-3.3.7/js/bootstrap.min.js"></script>
 </head>
-
 <body>
-<!--代码-->
-<div class="nav nav-pills" role="navigation">
-    <div class="navbar-header">
-        　<!-- .navbar-toggle样式用于toggle收缩的内容，即nav-collapse collapse样式所在元素 -->
-        <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-responsive-collapse">
-            <span class="sr-only">Toggle Navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-        </button>
-        <!-- 确保无论是宽屏还是窄屏，navbar-brand都显示 -->
-        <a href="##" class="navbar-brand">慕课网</a>
-    </div>
-    <!-- 屏幕宽度小于768px时，div.navbar-responsive-collapse容器里的内容都会隐藏，显示icon-bar图标，当点击icon-bar图标时，再展开。屏幕大于768px时，默认显示。 -->
-    <div class="collapse navbar-collapse navbar-responsive-collapse">
-        <ul class="nav navbar-nav">
-            <li class="active"><a href="##">网站首页</a></li>
-            <li><a href="##">系列教程</a></li>
-            <li><a href="##">名师介绍</a></li>
-            <li><a href="##">成功案例</a></li>
-            <li><a href="##">关于我们</a></li>
-        </ul>
-    </div>
-</div>
-<div style="width:80%;margin:auto;">
-    <ul class="nav nav-pills nav-justified">
-        <li class="active"><a href="##">Home</a></li>
-        <li><a href="##">CSS3</a></li>
-        <li><a href="##">Sass</a></li>
-        <li><a href="##">jQuery</a></li>
-        <li><a href="##">Responsive</a></li>
-    </ul>
-</div>
-<script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
-<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
-<script src="./bootstrap-3.3.7/js/bootstrap.min.js"></script>
+
+<table class="table table-bordered">
+	<caption>边框表格布局</caption>
+	<thead>
+		<tr>
+			<th>名称</th>
+			<th>城市</th>
+			<th>邮编</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>Tanmay</td>
+			<td>Bangalore</td>
+			<td>560001</td>
+		</tr>
+		<tr>
+			<td>Sachin</td>
+			<td>Mumbai</td>
+			<td>400003</td>
+		</tr>
+		<tr>
+			<td>Uma</td>
+			<td>Pune</td>
+			<td>411027</td>
+		</tr>
+	</tbody>
+</table>
+
 </body>
 </html>
