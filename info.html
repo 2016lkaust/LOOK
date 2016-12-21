@@ -1,53 +1,83 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html>
 <head>
-	<meta charset="utf-8"> 
-	<title>Bootstrap 实例 - 边框表格</title>
-	<link rel="stylesheet" href="./bootstrap-3.3.7/css/bootstrap.min.css">  
-	<script src="https://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
-	<script src="./bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>学生信息管理系统--学生端</title>
+    <link rel="stylesheet" href="./bootstrap-3.3.7/css/bootstrap.min.css">
+    <style type="text/css">
+        body {
+            padding: 50px 0 0 0;
+        }
+        .faceall{
+            width:80%;
+            margin: auto;
+        }
+
+    </style>
 </head>
+
 <body>
-<div class="table-responsive">
-<table class="table table-bordered" >
-	<caption>边框表格布局</caption>
-	<thead>
-		<tr>
-			<th>名称</th>
-			<th>城市</th>
-			<th>邮编</th>
-			<th>名称</th>
-			<th>城市</th>
-			<th>邮编</th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr>
-			<td>Tanmay</td>
-			<td>Bangalore</td>
-			<td>560001</td>
-			<td>Tanmay</td>
-			<td>Bangalore</td>
-			<td>560001</td>
-		</tr>
-		<tr>
-			<td>Sachin</td>
-			<td>Mumbai</td>
-			<td>400003</td>
-			<td>Tanmay</td>
-			<td>Bangalore</td>
-			<td>560001</td>
-		</tr>
-		<tr>
-			<td>Uma</td>
-			<td>Pune</td>
-			<td>411027</td>
-			<td>Tanmay</td>
-			<td>Bangalore</td>
-			<td>560001</td>
-		</tr>
-	</tbody>
-</table>
-	</div>
+
+<div class="faceall">
+    <!--设置锚点，配合bootstrap标签-->
+    <ul id="myTab" class="nav nav-tabs nav-pills  nav-justified navbar-fixed-top">
+        <li class="active">
+            <a href="#home" data-toggle="tab">首页</a>
+        </li>
+        <li class="dropdown">
+            <a href="#" id="myTabDrop1" class="dropdown-toggle"
+               data-toggle="dropdown">个人信息 <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="myTabDrop1">
+                <li><a href="#info_show" tabindex="-1" data-toggle="tab">
+                    填写信息</a>
+                </li>
+                <li><a href="#info_fill" tabindex="-1" data-toggle="tab">
+                    填写信息</a>
+                </li>
+                <li><a href="#info_refill" tabindex="-1" data-toggle="tab">
+                    删除重填</a>
+                </li>
+            </ul>
+        </li>
+        <li><a href="#changecode" data-toggle="tab">修改密码</a></li>
+        <li><a href="#quit" data-toggle="tab">退出系统</a></li>
+    </ul>
+    <div id="myTabContent" class="tab-content">
+        <!--首页的内容-->
+        <div class="tab-pane fade in active" id="home">
+
+            这里放首页的内容
+
+        </div>
+        <!--显示信息-->
+        <div class="tab-pane fade" id="info_show">
+            <p>显示信息</p>
+        </div>
+        <!--填写信息-->
+        <div class="tab-pane fade" id="info_fill">
+            <p>填写信息</p>
+        </div>
+        <!--重新填写信息-->
+        <div class="tab-pane fade" id="info_refill">
+            <p>重填信息</p>
+        </div>
+        <!--更改密码-->
+        <div class="tab-pane fade" id="changecode">
+            <p>更改密码
+            </p>
+        </div>
+        <!--退出-->
+        <div class="tab-pane fade" id="quit">
+            <p>退出
+            </p>
+        </div>
+    </div>
+</div>
+
+
+<script src="http://libs.baidu.com/jquery/1.9.1/jquery.js"></script>
+<script src="./bootstrap-3.3.7/js/bootstrap.min.js"></script>
+
 </body>
 </html>
