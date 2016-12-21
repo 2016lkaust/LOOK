@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
+</head>
+<body>
+<label id="tip">一会你就看不见我了</label>
+<div id="status">
+    <input type="text" class="form-control" id="inputSuccess1" placeholder="成功状态" >
+    <span id="gou"></span>
+  </div>
+
+<button class="btn" id="aaa" onclick="addClassName();">变！</button>
+
+<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+<script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+	function addClassName(){
+		document.getElementById("status").setAttribute("class","form-group has-success has-feedback");
+		document.getElementById("inputSuccess1").setAttribute("class","form-control");
+		document.getElementById("gou").setAttribute("class","glyphicon glyphicon-ok form-control-feedback");
+		document.getElementById("tip").style.visibility="hidden";
+	}
+</script>
+</body>
+</html>
