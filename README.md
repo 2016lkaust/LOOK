@@ -1,3 +1,4 @@
 # look
 This page will be used to show my web pages.
-[演示](https://2016lkaust.github.io/look/info.html)
+
+[点击进入最新演示界面](https://2016lkaust.github.io/look/show.html)
