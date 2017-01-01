@@ -10,7 +10,7 @@
         }
 
         a {
-            color: #428BCA;
+            color: #DDDDDD;
             font-weight: bold;
             text-decoration: none;
         }
@@ -30,31 +30,32 @@
 
         .navbar > li {
             float: left;
-            border: 1px #DDDDDD solid;
             list-style: none;
             padding: 1.1% 5%;
+            background: #2E2E2E;
+            opacity: 0.8;
         }
 
-        .navbar > li:hover {
-            background: #DDDDDD;
+        .navbar > li > a:hover {
+            color: white;
+            opacity: 1;
         }
 
         /*激活状态下的样式*/
         .navbar > .active {
-            background: #428BCA;
+            background: black;
         }
 
-        .navbar > .active a {
+        .navbar > .active > a {
             color: #FFFFFF;
         }
 
         .navbar > .active:hover {
-           background: #428BCA;
+            background: black;
         }
 
         /*内容区*/
         article {
-            height: 500px;
         }
 
         /*表单切换按钮组 */
@@ -62,7 +63,7 @@
             border: 1px #DDDDDD solid;
             list-style: none;
             float: left;
-            padding: 10px 15px;
+            padding: 1% 2%;
             border-left: 0;
             margin: 0;
         }
@@ -72,19 +73,24 @@
             clear: left;
         }
 
-        .pagination > li:first-child {
+        .pagination > li > a {
+            color: #000;
+            font-weight: bold;
+        }
+
+        li:first-child {
             border-left: 1px solid #DDDDDD;
             border-top-left-radius: 5px;
             border-bottom-left-radius: 5px;
         }
 
-        .pagination > li:last-child {
+        li:last-child {
             border-top-right-radius: 5px;
             border-bottom-right-radius: 5px;
         }
 
         footer {
-            //上面两个组件浮动导致div范围不对，将div撑起来
+            /*上面两个组件浮动导致div范围不对，将div撑起来*/
             clear: both;
         }
     </style>
