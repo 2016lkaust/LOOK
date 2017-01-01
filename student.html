@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>学生端</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            color: #428BCA;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        div {
+            width: 80%;
+            margin: 0 auto;
+            border: 1px silver solid;
+        }
+
+        /*导航栏*/
+        .navbar {
+            float: left;
+            margin: 0 5%;
+            width: 100%;
+        }
+
+        .navbar > li {
+            float: left;
+            border: 1px #DDDDDD solid;
+            list-style: none;
+            padding: 1.1% 5%;
+        }
+
+        .navbar > li:hover {
+            background: #DDDDDD;
+        }
+
+        /*激活状态下的样式*/
+        .navbar > .active {
+            background: #428BCA;
+        }
+
+        .navbar > .active a {
+            color: #FFFFFF;
+        }
+
+        .navbar > .active:hover {
+            background: black;
+        }
+
+        /*内容区*/
+        article {
+            height: 500px;
+        }
+
+        /*表单切换按钮组 */
+        .pagination > li {
+            border: 1px #DDDDDD solid;
+            list-style: none;
+            float: left;
+            padding: 10px 15px;
+            border-left: 0;
+            margin: 0;
+        }
+
+        .pagination {
+            /*为了让组件不跟在上一组件右边*/
+            clear: left;
+        }
+
+        .pagination > li:first-child {
+            border-left: 1px solid #DDDDDD;
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+        }
+
+        .pagination > li:last-child {
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+        }
+
+        footer {
+            //上面两个组件浮动导致div范围不对，将div撑起来
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <!--导航栏-->
+    <ul class="navbar">
+        <li class="active"><a href="#">首页</a></li>
+        <li><a href="#">信息查询</a></li>
+        <li><a href="#">留言管理</a></li>
+        <li><a href="#">意见反馈</a>
+        <li><a href="#">退出</a></li>
+    </ul>
+    <!--表单部分-->
+    <article>
+
+    </article>
+    <!--表单切换按钮组-->
+    <ul class="pagination">
+        <li><a href="#">1</a></li>
+        <li><a href="#">2</a></li>
+        <li><a href="#">3</a></li>
+        <li><a href="#">4</a></li>
+        <li><a href="#">5</a></li>
+        <li><a href="#">6</a></li>
+    </ul>
+    <!--底部信息栏-->
+    <footer>
+
+    </footer>
+</div>
+<script>
+    window.onload = function () {
+        var nav = document.getElementsByClassName("navbar");
+        var lis = nav[0].getElementsByTagName("li");
+        for (var i = 0; i < lis.length; i++) {
+            //给每一个li绑定事件
+            lis[i].onclick = function () {
+                for (var j = 0; j < lis.length; j++) {
+                    lis[j].className = "";
+                }
+                this.className = "active";
+            }
+        }
+    }
+</script>
+</body>
+</html>
