@@ -136,8 +136,9 @@
                 this.className = "active";
             }
         }
-         alert("可用宽度：" + screen.availWidth);
-       alert("可用高度：" + screen.availHeight);
+        var article=document.getElementsByTagName("article");
+        article.innerHTML="可用宽度：" + screen.availWidth+"可用高度：" + screen.availHeight;
+       
     }
 </script>
 </body>
