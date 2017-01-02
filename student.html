@@ -10,16 +10,16 @@
             padding: 0;
         }
 
-        a {
-            color: #DDDDDD;
-            font-weight: bold;
-            text-decoration: none;
-        }
-
         div {
             width: 80%;
             margin: 0 auto;
             border: 1px silver solid;
+        }
+
+        a {
+            color: #DDDDDD;
+            font-weight: bold;
+            text-decoration: none;
         }
 
         /*导航栏*/
@@ -41,6 +41,7 @@
             color: white;
             opacity: 1;
         }
+
 
         /*激活状态下的样式*/
         .navbar > .active {
@@ -98,19 +99,21 @@
             div {
                 width: 350px;
                 height:100%;
-                border: 1px silver solid;
             }
-             .navbar {
+            .navbar {
                 margin: 0;
+                border: 1px red solid;
             }
             .navbar > li {
                 float: left;
                 list-style: none;
-                padding: 2px 20px;
+                padding: 3px 15px;
                 background: #2E2E2E;
                 opacity: 0.8;
             }
+
         }
+
     </style>
 </head>
 <body>
@@ -154,8 +157,8 @@
                 this.className = "active";
             }
         }
-        var article=document.getElementsByTagName("article");
-        article[0].innerHTML="可用宽度：" + screen.availWidth+"可用高度：" + screen.availHeight;
+        var article = document.getElementsByTagName("article");
+        article[0].innerHTML = "可用宽度：" + screen.availWidth + "可用高度：" + screen.availHeight;
     }
 </script>
 </body>
