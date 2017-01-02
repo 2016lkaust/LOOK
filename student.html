@@ -11,9 +11,10 @@
         }
 
         div {
-            width: 80%;
+            width: 1200px;
             margin: 0 auto;
             border: 1px silver solid;
+            position: relative;
         }
 
         a {
@@ -24,8 +25,10 @@
 
         /*导航栏*/
         .navbar {
+            position: relative;
             float: left;
-            margin: 0 5%;
+            padding: 0;
+            margin: 0 108px;
             width: 100%;
         }
 
@@ -41,7 +44,6 @@
             color: white;
             opacity: 1;
         }
-
 
         /*激活状态下的样式*/
         .navbar > .active {
@@ -95,19 +97,26 @@
             /*上面两个组件浮动导致div范围不对，将div撑起来*/
             clear: both;
         }
-        @media only screen and (max-width: 550px) {
+
+        @media only screen and (max-width: 500px) {
+
             div {
+                position: static;
                 width: 350px;
-                height:100%;
+                height: 100%;
+                margin: auto;
             }
+
             .navbar {
-                margin: 0;
+                margin: 0 auto;
                 border: 1px red solid;
+                padding: 0;
             }
+
             .navbar > li {
                 float: left;
                 list-style: none;
-                padding: 3px 15px;
+                padding: 4px 16px;
                 background: #2E2E2E;
                 opacity: 0.8;
             }
