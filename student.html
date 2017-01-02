@@ -93,6 +93,17 @@
             /*上面两个组件浮动导致div范围不对，将div撑起来*/
             clear: both;
         }
+        @media only screen and (max-width: 550px) {
+            div {
+                width: 100%;
+                border: 1px silver solid;
+            }
+            .navbar {
+                float: left;
+                margin: 0 5%;
+                width: 100%;
+            }
+        }
     </style>
 </head>
 <body>
